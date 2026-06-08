@@ -15,7 +15,6 @@ class ParkingLot:
         spot_type = vehicle.find_spot()
         for floor in self.floors:
             if floor.get_spotAvailability(spot_type) != 0:
-                floor.decrease_spotAvailability(spot_type)
                 ticket = Ticket(datetime.now(), vehicle)
                 self.active_tickets[vehicle.get_plate()] = (ticket, floor)
                 print(f"Vehicle {vehicle.get_plate()} entered!")
