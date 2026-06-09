@@ -32,3 +32,6 @@ class ParkingLot:
         del self.active_tickets[plate]
         print(f"Vehicle {plate} exited")
         print(f"Total payment: {total}")
+    def get_ticket(self, vehicle):
+        plate = vehicle.get_plate()
+        return self.active_tickets.get(plate)  # returns None if not parked
